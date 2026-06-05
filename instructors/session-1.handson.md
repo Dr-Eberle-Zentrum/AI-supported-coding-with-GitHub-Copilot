@@ -22,10 +22,8 @@ Thus, we have to agree on a common prompt.
 - ? Formulate TOGETHER a prompt (without testing/using it) to get an idea what the script does!
   - you are so far interested in the purpose and general function of the script...
   - *KEEP*: add your prompt to your log file
-
 - ? What are important elements of the prompt?
   >> check the RECCE Prompt Checklist (via AI)
-
 - ? Revise the created prompt into a final common prompt all agree upon!
   - *KEEP*: add the final common prompt to your log file
   
@@ -36,6 +34,8 @@ Thus, we have to agree on a common prompt.
 - copy and paste the developed prompt along with the script file to your chat AI
   - *KEEP*: store the first answer of the script in your log file (for comparison)
 - continue chatting with the AI to better understand the script's context and purpose
+
+Within the group:
 
 - ? Let's have a look at the different outputs and compare!
 - ? How useful was the output?
