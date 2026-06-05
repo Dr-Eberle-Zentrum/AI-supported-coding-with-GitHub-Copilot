@@ -28,5 +28,8 @@ Each lists the required self-study materials and the session plan.
 - [Session 3](session-3.md) - `ellmer` Usage and Reproducability Issues
 - [Session 4](session-4.md) - Autonomous AI-Usage and Code Generation/Revision
 
+
+- [revision plan](session-plan.md)
+
 ::::::::::::::::::
 
