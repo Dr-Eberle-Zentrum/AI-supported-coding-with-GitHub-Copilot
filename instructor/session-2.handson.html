@@ -62,7 +62,7 @@
         <button class="btn btn-secondary dropdown-toggle bordered-button" type="button" id="dropdownMenu1" data-bs-toggle="dropdown" aria-expanded="false">
           <i aria-hidden="true" class="icon" data-feather="eye"></i> Instructor View <i data-feather="chevron-down"></i>
         </button>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1"><li><button class="dropdown-item" type="button" onclick="window.location.href='../private-tokens.html';">Learner View</button></li>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1"><li><button class="dropdown-item" type="button" onclick="window.location.href='../session-2.handson.html';">Learner View</button></li>
         </ul></div>
     </div>
   </div>
@@ -174,7 +174,7 @@
                     </h2>
                     <div id="flush-collapseNine" class="accordion-collapse collapse" aria-labelledby="flush-headingNine" data-bs-parent="#accordionFlush2">
                       <div class="accordion-body">
-                        <a href="../private-tokens.html">Learner View</a>
+                        <a href="../session-2.handson.html">Learner View</a>
                       </div>
                     </div>
                   </div><!--/div.accordion-item-->
@@ -347,9 +347,9 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1></h1>
-        <p>Last updated on 2026-02-12 |
+        <p>Last updated on 2026-06-11 |
 
-        <a href="https://github.com/Dr-Eberle-Zentrum/AI-supported-coding-with-GitHub-Copilot/edit/main/instructors/private-tokens.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+        <a href="https://github.com/Dr-Eberle-Zentrum/AI-supported-coding-with-GitHub-Copilot/edit/main/instructors/session-2.handson.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
 
 
@@ -360,63 +360,147 @@
         </div>
 
         
-<section><h2 class="section-heading" id="avoiding-github-copilot-from-reading-secrets-in-rstudio">Avoiding GitHub Copilot from Reading Secrets in RStudio<a class="anchor" aria-label="anchor" href="#avoiding-github-copilot-from-reading-secrets-in-rstudio"></a></h2>
-<hr class="half-width"><p>Because GitHub Copilot works by sending snippets of your current code
-to a server to generate suggestions, the only foolproof way to keep
-secrets out of Copilot is to never type them directly into your R
-scripts.</p>
-<p>Instead of hardcoding credentials, you should use an environment
-variable approach. This keeps your secrets in a separate file that
-Copilot doesn’t process for suggestions.</p>
-<p>Here are the best practices for managing this in RStudio.</p>
+
+<p>Guten Tag, everyone! Welcome to today’s hands-on session.</p>
+<p>Up until now, you’ve probably used AI like ChatGPT by typing a
+prompt, hitting enter, and waiting for a large block of text to come
+back. Today, we are going to experience a completely different flavor of
+AI assistance: <strong>inline autocompletion</strong> right inside your
+code editor, Visual Studio Code (VS Code), using GitHub Copilot.</p>
+<p>Think of it like the predictive text on your smartphone, but on
+absolute steroids. It tries to guess what you want to write before you
+even finish your thought.</p>
+<p>We will use the artificial bank transactions CSV file you prepared
+earlier. Let’s get our hands dirty!</p>
+<hr><section><h2 class="section-heading" id="step-by-step-exercise">🛠️ Step-by-Step Exercise<a class="anchor" aria-label="anchor" href="#step-by-step-exercise"></a></h2>
+<hr class="half-width"><p>Follow these five steps to set up your project and see GitHub Copilot
+in action.</p>
 <div class="section level3">
-<h3 id="store-credentials-in--renviron">1. Store Credentials in <code>.Renviron</code>
-<a class="anchor" aria-label="anchor" href="#store-credentials-in--renviron"></a></h3>
-<p>The <code>.Renviron</code> file is a special configuration file
-loaded when R starts. It is the standard place to store API keys,
-database passwords, and tokens.</p>
-<div class="section level4">
-<h4 id="i-in-rstudio-type-the-following-command-in-your-console">(I) In RStudio, type the following command in your console:<a class="anchor" aria-label="anchor" href="#i-in-rstudio-type-the-following-command-in-your-console"></a></h4>
-<pre><code>  usethis::edit_r_environ()
-
-  A new file named `.Renviron` will open. Add your credentials in KEY=VALUE format:
-  Plaintext
-
-  DATABASE_PASSWORD=your_actual_password_here
-  API_TOKEN=your_actual_token_here</code></pre>
-<p>Save the file and restart your R session (Session -&gt; Restart R)
-for the changes to take effect.</p>
-</div>
-<div class="section level4">
-<h4 id="ii-reference-variables-in-your-code">(II) Reference Variables in Your Code<a class="anchor" aria-label="anchor" href="#ii-reference-variables-in-your-code"></a></h4>
-<p>Now, in your R script, instead of typing the password, you call the
-environment variable. Copilot will only see the variable name
-(<code>Sys.getenv(...)</code>), not the actual secret.</p>
-<p>Instead of this (BAD):</p>
-<pre><code><span><span class="va">con</span> <span class="op">&lt;-</span> <span class="fu">dbConnect</span><span class="op">(</span><span class="fu">PostgreSQL</span><span class="op">(</span><span class="op">)</span>, password <span class="op">=</span> <span class="st">"supersecretpassword123"</span><span class="op">)</span></span></code></pre>
-<p>Do this (GOOD):</p>
-<pre><code><span><span class="co"># Copilot sees this, which is safe</span></span>
-<span><span class="va">con</span> <span class="op">&lt;-</span> <span class="fu">dbConnect</span><span class="op">(</span><span class="fu">PostgreSQL</span><span class="op">(</span><span class="op">)</span>, password <span class="op">=</span> <span class="fu">Sys.getenv</span><span class="op">(</span><span class="st">"DATABASE_PASSWORD"</span><span class="op">)</span><span class="op">)</span></span></code></pre>
-</div>
-<div class="section level4">
-<h4 id="iii-set-the-variables-via-operating-system-advanced">(III) Set the Variables via Operating System (Advanced)<a class="anchor" aria-label="anchor" href="#iii-set-the-variables-via-operating-system-advanced"></a></h4>
-<p>While Copilot in RStudio is primarily focused on the active file, it
-sometimes scans nearby files to understand project context. To prevent
-it from reading files containing secrets you can store your credentials
-in environment variables at the operating system level instead of using
-<code>.Renviron</code>.</p>
+<h3 id="step-1-create-a-new-project-folder">Step 1: Create a New Project Folder<a class="anchor" aria-label="anchor" href="#step-1-create-a-new-project-folder"></a></h3>
+<p>Before opening VS Code, we need a designated space on your computer
+for this project.</p>
+<ul><li>Go to your computer’s desktop or documents folder.</li>
+<li>Create a brand-new folder and name it
+<code>copilot-test</code>.</li>
+</ul></div>
+<div class="section level3">
+<h3 id="step-2-open-the-folder-and-integrate-your-data">Step 2: Open the Folder and Integrate Your Data<a class="anchor" aria-label="anchor" href="#step-2-open-the-folder-and-integrate-your-data"></a></h3>
+<p>Now, let’s open this folder inside Visual Studio Code and add your
+data.</p>
+<ul><li>Open <strong>Visual Studio Code</strong>.</li>
+<li>Click on <strong>File</strong> in the top menu, then select
+<strong>Open Folder…</strong> (on Mac, it might just say
+<strong>Open…</strong>).</li>
+<li>Select the <code>copilot-test</code> folder you just created and
+click open.</li>
+<li>Now, take your artificial bank transactions CSV file from your
+computer and <strong>drag and drop</strong> it directly into the
+left-hand sidebar (the File Explorer) of VS Code.</li>
+</ul></div>
+<div class="section level3">
+<h3 id="step-3-inspect-your-data-set">Step 3: Inspect Your Data Set<a class="anchor" aria-label="anchor" href="#step-3-inspect-your-data-set"></a></h3>
+<p>Let’s make sure VS Code can read your file properly.</p>
+<ul><li>In the left sidebar of VS Code, click once on your CSV file to open
+it.
+<ul><li>When clicking on a word in the file, all occurrences should be
+highlighted..</li>
+</ul></li>
+<li>Take a close look at the top row (the headers).
 <ul><li>
-<strong>Windows</strong>: Use the System Properties -&gt;
-Environment Variables to set your variables.</li>
-<li>
-<strong>macOS/Linux</strong>: Add export statements to your shell
-profile (e.g., <code>~/.bash_profile</code> or
-<code>~/.zshrc</code>):</li>
+<em>Keep a mental note of these column names!</em> GitHub Copilot is
+currently “reading” this file in the background to understand your
+project context.</li>
+</ul></li>
+</ul></div>
+<div class="section level3">
+<h3 id="step-4-create-a-readme-md-file">Step 4: Create a “README.md” File<a class="anchor" aria-label="anchor" href="#step-4-create-a-readme-md-file"></a></h3>
+<p>In the world of software and data, a <code>README.md</code> file is
+the standard homepage or instruction manual for any project. The
+<code>.md</code> stands for Markdown, which is just a simple way to
+format text. If you are not familiar with Markdown yet, here is the <a href="https://www.markdownguide.org/cheat-sheet/" class="external-link">Markdown Cheat
+Sheet</a> to look up things.</p>
+<ul><li>Hover your mouse over the left sidebar (where your CSV file is
+listed).</li>
+<li>Click the <strong>New File</strong> icon (it looks like a piece of
+paper with a plus sign).</li>
+<li>Type exactly <code>README.md</code> and hit <strong>Enter</strong>.
+You now have a blank document open.</li>
+</ul></div>
+<div class="section level3">
+<h3 id="step-5-trigger-github-copilot-the-magic-moment">Step 5: Trigger GitHub Copilot (The Magic Moment)<a class="anchor" aria-label="anchor" href="#step-5-trigger-github-copilot-the-magic-moment"></a></h3>
+<p>Now, let’s see the AI work its magic without you having to ask it a
+direct question.</p>
+<ul><li>Click into your blank <code>README.md</code> file and type the
+following heading exactly:</li>
+</ul><div class="codewrapper sourceCode" id="cb1">
+<h3 class="code-label">MARKDOWN<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode markdown" tabindex="0"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" tabindex="-1" aria-label="code-block-1-1"></a><span class="fu"># Bank Transactions Data Documentation</span></span></code></pre>
+</div>
+<ul><li>Press <strong>Enter</strong> to go to a new line.</li>
+<li>Now, type the words: <strong>“This data set contains”</strong> and
+then <strong>STOP typing.</strong> Do not hit enter. Just wait for 2
+seconds.</li>
+</ul><blockquote>
+<p>💡 <strong>What to look for:</strong> You should see light grey text
+appear right in front of your cursor. GitHub Copilot has looked at your
+CSV file, realized what columns are inside it, and is now trying to
+finish your sentence for you!</p>
+</blockquote>
+<ul><li>
+<strong>How to accept it:</strong>
+<ul><li>If you like what the AI suggested, simply press the
+<strong>Tab</strong> key on your keyboard. The <strong>whole</strong>
+grey text will turn solid, meaning you’ve accepted the suggestion.</li>
+<li>If you press <strong>CTRL + Right Arrow</strong> (or <strong>CMD +
+Right Arrow</strong> on Mac), you can accept the suggestion word by word
+instead of all at once.</li>
+<li>When hovering with your mouse over the grey text, you can also see a
+menue to switch to alternative suggestions and to see the options from
+above.</li>
+</ul></li>
+<li>Press <strong>Enter</strong> again and start typing another
+sentence, like <strong>“The columns included are:”</strong> and wait
+again.</li>
+<li>Check whether the suggested names match your exact column
+names!</li>
+</ul><hr></div>
+</section><section><h2 class="section-heading" id="why-is-this-different-from-a-chatbot">🧠 Why is this different from a Chatbot?<a class="anchor" aria-label="anchor" href="#why-is-this-different-from-a-chatbot"></a></h2>
+<hr class="half-width"><table class="table"><colgroup><col width="33%"><col width="33%"><col width="33%"></colgroup><thead><tr><th>Feature</th>
+<th>Chat-Based AI (e.g., ChatGPT)</th>
+<th>Inline Autocompletion (GitHub Copilot)</th>
+</tr></thead><tbody><tr><td><strong>Workflow</strong></td>
+<td>You have to copy-paste data, switch windows, write a prompt, and
+wait.</td>
+<td>It stays quietly in the background right where you are already
+working.</td>
+</tr><tr><td><strong>Context Awareness</strong></td>
+<td>It only knows what you explicitly paste into the chatbox.</td>
+<td>It automatically “reads” the other files open in your editor to
+guess your next move.</td>
+</tr><tr><td><strong>Speed</strong></td>
+<td>Takes 10–30 seconds to generate a full response.</td>
+<td>Anticipates your next words in <strong>milliseconds</strong> as you
+type.</td>
+</tr></tbody></table><hr><div class="section level3">
+<h3 id="quick-check-in">Quick Check-In<a class="anchor" aria-label="anchor" href="#quick-check-in"></a></h3>
+<p>Were you able to see the grey text suggestions appear? If the Tab key
+isn’t working for you, or if the grey text isn’t showing up, raise your
+hand and we will come around to check your Copilot activation
+status!</p>
+</div>
+<div class="section level3">
+<h3 id="next-steps">🚀 Next Steps<a class="anchor" aria-label="anchor" href="#next-steps"></a></h3>
+<ul><li><p>Try writing a few more sentences in your <code>README.md</code>
+file and see how Copilot tries to help you.</p></li>
+<li><p>Check the Tutorial <a href="https://code.visualstudio.com/docs/editing/ai-powered-suggestions" class="external-link">Inline
+suggestions from GitHub Copilot in VS Code</a> for more tips and tricks
+on how to make the most out of GitHub Copilot’s inline
+suggestions.</p></li>
 </ul><!--
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
  --></div>
-</div>
 </section></div> <!-- / div.lesson-content -->
     </main><!-- / main#main-content.main-content --><nav class="bottom-pagination mx-md-4" aria-label="Previous and Next Chapter"><div class="d-block d-sm-block d-md-none">
         <a class="chapter-link" href="../instructor/index.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previous</a>
@@ -436,7 +520,7 @@ any links that you are not going to use.
         <p>This lesson is subject to the <a href="CODE_OF_CONDUCT.html">Code of Conduct</a></p>
         <p>
 
-        <a href="https://github.com/Dr-Eberle-Zentrum/AI-supported-coding-with-GitHub-Copilot/edit/main/instructors/private-tokens.md" class="external-link">Edit on GitHub</a>
+        <a href="https://github.com/Dr-Eberle-Zentrum/AI-supported-coding-with-GitHub-Copilot/edit/main/instructors/session-2.handson.md" class="external-link">Edit on GitHub</a>
 
 	
         | <a href="https://github.com/Dr-Eberle-Zentrum/AI-supported-coding-with-GitHub-Copilot/blob/main/CONTRIBUTING.md" class="external-link">Contributing</a>
@@ -462,17 +546,17 @@ any links that you are not going to use.
     {
   "@context": "https://schema.org",
   "@type": "LearningResource",
-  "@id": "https://Dr-Eberle-Zentrum.github.io/AI-supported-coding-with-GitHub-Copilot/instructor/private-tokens.html",
+  "@id": "https://Dr-Eberle-Zentrum.github.io/AI-supported-coding-with-GitHub-Copilot/instructor/session-2.handson.html",
   "inLanguage": "en",
   "dct:conformsTo": "https://bioschemas.org/profiles/LearningResource/1.0-RELEASE",
   "description": "A Carpentries Lesson teaching foundational data and coding skills to researchers worldwide",
   "keywords": "AI, Programming, GitHub Copilot",
   "name": "",
   "creativeWorkStatus": "active",
-  "url": "https://Dr-Eberle-Zentrum.github.io/AI-supported-coding-with-GitHub-Copilot/instructor/private-tokens.html",
-  "identifier": "https://Dr-Eberle-Zentrum.github.io/AI-supported-coding-with-GitHub-Copilot/instructor/private-tokens.html",
+  "url": "https://Dr-Eberle-Zentrum.github.io/AI-supported-coding-with-GitHub-Copilot/instructor/session-2.handson.html",
+  "identifier": "https://Dr-Eberle-Zentrum.github.io/AI-supported-coding-with-GitHub-Copilot/instructor/session-2.handson.html",
   "dateCreated": "2025-12-10",
-  "dateModified": "2026-02-12",
+  "dateModified": "2026-06-11",
   "datePublished": "2026-06-11"
 }
 
