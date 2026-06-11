@@ -14,7 +14,7 @@
 
 - course layout
   - workflow
-  - intro to ai-based tests of self-study + codeword submission
+  - intro to ai-based tests of self-study + code-word submission
   - expectations and what to expect
 
 - ? (how) did your "knowledge search strategy" changed since AIs are available?
@@ -40,7 +40,7 @@
       - verschiedene modelle wählbar  - 
 
 
-# 1 - self-study material
+# 2 - self-study material
 
 - github (copilot) registration
 - visual studio code installation 
@@ -50,13 +50,37 @@
   - codeword test
 
 
-# todo
+# session 2
 
 - model != "service/platform"
+  - idR 2-3 Modellebenen, unterscheiden sich in 
+    - input/context größe
+    - modellumfang (speicher+verknüpfungen, anzahl parameter, ...)
+    - reasoning-loops und "unsichtbarem denken" etc.
 
 - temperature and top_p in action
   - https://chat-ai.academiccloud.de/
     - login with university account
     - select model
     - "settings" upper right corner
-      - ! play with temperature etc.
+      - ! play with temperature etc. in different sessions asking the same question
+        - compare results
+
+- context matters (last session RACCE prompt design)
+  - now: context via IDE!
+  - VSC tour
+  - create project for course
+    - init with data file from submissions
+
+- ! autocompletion task
+  - [session-2.handon.md](session-2.handson.md)
+
+- ? what did happen? what information is used to generate the answer?
+  - current file
+  - ALL OPEN files
+  - AI guide files (AGENTS.md, .github/copilot-instructions.md, https://code.visualstudio.com/docs/copilot/getting-started#_step-4-personalize-your-ai-experience)
+  
+- ? what is the problem in our setting?
+  >> private data was sent online! privacy issues relevant for a lot of things!
+  - ? how to avoid?
+
