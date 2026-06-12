@@ -48,7 +48,7 @@
 - https://medium.com/data-science-at-microsoft/how-large-language-models-work-91c362f5b78f
   - google translate link + hint about "audio option"
   - codeword test
-
+- https://medium.com/@sukhitashvili.soso/choosing-temperature-topk-and-topp-for-llm-text-generation-7b0972a9bb2a
 
 # session 2
 
@@ -59,6 +59,7 @@
     - reasoning-loops und "unsichtbarem denken" etc.
 
 - temperature and top_p in action
+  - https://medium.com/@sukhitashvili.soso/choosing-temperature-topk-and-topp-for-llm-text-generation-7b0972a9bb2a
   - https://chat-ai.academiccloud.de/
     - login with university account
     - select model
@@ -73,7 +74,8 @@
     - init with data file from submissions
 
 - ! autocompletion task
-  - [session-2.handon.md](session-2.handson.md)
+  - [session-2.handson.md](session-2.handson.md)
+  - upload/submit your created `README.md`
 
 - ? what did happen? what information is used to generate the answer?
   - current file
@@ -83,4 +85,15 @@
 - ? what is the problem in our setting?
   >> private data was sent online! privacy issues relevant for a lot of things!
   - ? how to avoid?
+  
+- ? how to ensure privacy when using AI?
+  - local vs. cloud service
+  - free vs. payed plans
+  - privacy settings in tools https://paulsorensen.io/github-copilot-vscode-privacy/
+  - separating sensitive data/code from ai-supported projects
+    - YOU have to take care when AI is enabled or data leaks are possible
 
+
+# 3 - self-study
+
+- https://code.visualstudio.com/docs/editing/ai-powered-suggestions
