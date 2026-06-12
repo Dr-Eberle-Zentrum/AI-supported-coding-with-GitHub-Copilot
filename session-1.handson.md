@@ -12,6 +12,10 @@ Thus, I recommend to open up a MsWord/GoogleDocs/.. text editor for an easy C&P 
 # (1) Understanding a foreign script
 
 We want to use a chat AI to get an idea what the following script does.
+
+- [old-script.pl](old-script.pl)
+
+
 To this end:
 
 ## (1.1) What prompt to use?
