@@ -512,11 +512,14 @@ possible</li>
 <p>Task A - <a href="session-3.handson.html">session-3.handson.md</a></p>
 </blockquote>
 <ul><li>chat view
-<ul><li>context of a prompt can be set/extended
+<ul><li>context of a prompt can be set (open/selected) and extended (context
+menu “Add File to Chat”)
 <ul><li>default = current file or selection</li>
 <li>additional files can be added</li>
-<li>context definition via <code>@codebase</code>,
-<code>@readFile</code>, ..</li>
+<li>context definition via <code>#...</code>,
+e.g. <code>#codebase</code>, <code>#readFile</code>, ..</li>
+<li>chat partners via <code>@...</code>, e.g. <code>@vscode</code>,
+<code>@codebase</code>, …</li>
 <li>chat commands
 <ul><li>
 <code>/explain</code>, <code>/fix</code>, …</li>
@@ -545,12 +548,63 @@ one?</li>
 <p>Upload/submit your created <code>index.html</code> file along with
 its CSS file!</p>
 </blockquote>
-<!--
+</div>
+</div>
+<div class="section level1">
+<h1 id="self-study-material-for-session-4">self-study material for session 4<a class="anchor" aria-label="anchor" href="#self-study-material-for-session-4"></a></h1>
+<ul><li><a href="Risks,%20Drawbacks%20and%20Responsibilities%20with%20AI%20Usage">../episodes/ai-risks-responsibilities.md</a></li>
+</ul></div>
+<div class="section level1">
+<h1 id="session-4">session 4<a class="anchor" aria-label="anchor" href="#session-4"></a></h1>
+<ul><li>how to stay in control?
+<ul><li>have a plan and break it down into small steps</li>
+</ul></li>
+<li>small, iterative steps
+<ul><li>allows to check results (get explanations) and adjust prompt</li>
+<li>allows to stay in control and avoid unwanted changes</li>
+</ul></li>
+<li>? how to get a good plan?
+<ul><li>use an AI chat to get an idea how to do the next step</li>
+<li>OR use the “Plan”-Agent of VSC to get a step-by-step plan for your
+task
+<ul><li><a href="https://code.visualstudio.com/docs/agents/agent-types/local-agents" class="external-link uri">https://code.visualstudio.com/docs/agents/agent-types/local-agents</a></li>
+<li>switch to “Plan”-Agent and ask for a plan to create a nice website
+for our data</li>
+</ul></li>
+</ul></li>
+</ul><blockquote>
+<p>TASK: - open Chat view and switch to “Plan”-Agent - ask for a plan to
+rewrite your website into an interactive one using JavaScript - check
+the created plan and adjust it to your needs - execute the first step of
+the plan and check results - continue with the next steps of the
+plan</p>
+</blockquote>
+<ul><li>something went wrong?! the timeline feature of files in VSC
+<ul><li>“timeline” view of file changes</li>
+<li>“compare with previous version”</li>
+<li>“revert changes”</li>
+</ul></li>
+</ul><blockquote>
+<p>TASK: - find Timeline of your <code>index.html</code> file - how many
+versions do you have? can you find the version before the AI changes? -
+compare with previous version</p>
+</blockquote>
+<ul><li>next level: git-based version control (commit, push, pull, revert,
+branches, …)
+<ul><li>concept of branches and pull requests allows to separate “AI
+experiments” from main codebase and only merge when satisfied with
+results</li>
+<li>next-next level: online git repositories (github, gitlab, bitbucket,
+…)
+<ul><li>bonus: GitHub Copilot operates also in GitHub’s web-based code
+editor and pull request interface, allowing to use AI support also in
+online code reviews and pull request management</li>
+</ul></li>
+</ul></li>
+</ul><!--
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
- -->
-</div>
-</div>
+ --></div>
 
 
 
