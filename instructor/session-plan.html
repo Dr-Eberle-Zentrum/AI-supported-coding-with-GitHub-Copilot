@@ -100,7 +100,7 @@
           <button class="nav-link dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-expanded="false">
             More <i data-feather="chevron-down"></i>
           </button>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown"><li><a class="dropdown-item" href="private-tokens.html"></a></li><li><a class="dropdown-item" href="self-assessment-AGENTS.html"></a></li><li><a class="dropdown-item" href="session-1.handson.html"></a></li><li><a class="dropdown-item" href="session-1.html"></a></li><li><a class="dropdown-item" href="session-2.handson.html"></a></li><li><a class="dropdown-item" href="session-2.html"></a></li><li><a class="dropdown-item" href="session-3.html"></a></li><li><a class="dropdown-item" href="session-4.html"></a></li><li><a class="dropdown-item" href="session-plan.html"></a></li><hr><li><a class="dropdown-item" href="reference.html">Reference</a></li>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown"><li><a class="dropdown-item" href="private-tokens.html"></a></li><li><a class="dropdown-item" href="self-assessment-AGENTS.html"></a></li><li><a class="dropdown-item" href="session-1.handson.html"></a></li><li><a class="dropdown-item" href="session-1.html"></a></li><li><a class="dropdown-item" href="session-2.handson.html"></a></li><li><a class="dropdown-item" href="session-2.html"></a></li><li><a class="dropdown-item" href="session-3.handson.html"></a></li><li><a class="dropdown-item" href="session-3.html"></a></li><li><a class="dropdown-item" href="session-4.html"></a></li><li><a class="dropdown-item" href="session-plan.html"></a></li><hr><li><a class="dropdown-item" href="reference.html">Reference</a></li>
           </ul></li>
       </ul></div>
     <!--
@@ -316,7 +316,7 @@
                       <li>
                         <a href="../instructor/images.html">Extract All Images</a>
                       </li>
-                      <li><a href="private-tokens.html"></a></li><li><a href="self-assessment-AGENTS.html"></a></li><li><a href="session-1.handson.html"></a></li><li><a href="session-1.html"></a></li><li><a href="session-2.handson.html"></a></li><li><a href="session-2.html"></a></li><li><a href="session-3.html"></a></li><li><a href="session-4.html"></a></li><li><a href="session-plan.html"></a></li><hr><li><a class="dropdown-item" href="reference.html">Reference</a></li>
+                      <li><a href="private-tokens.html"></a></li><li><a href="self-assessment-AGENTS.html"></a></li><li><a href="session-1.handson.html"></a></li><li><a href="session-1.html"></a></li><li><a href="session-2.handson.html"></a></li><li><a href="session-2.html"></a></li><li><a href="session-3.handson.html"></a></li><li><a href="session-3.html"></a></li><li><a href="session-4.html"></a></li><li><a href="session-plan.html"></a></li><hr><li><a class="dropdown-item" href="reference.html">Reference</a></li>
                     </ul></div>
                 </div>
               </div>
@@ -347,7 +347,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1></h1>
-        <p>Last updated on 2026-06-12 |
+        <p>Last updated on 2026-06-19 |
 
         <a href="https://github.com/Dr-Eberle-Zentrum/AI-supported-coding-with-GitHub-Copilot/edit/main/instructors/session-plan.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -424,7 +424,7 @@ are available?</p></li>
 <li><a href="https://medium.com/@sukhitashvili.soso/choosing-temperature-topk-and-topp-for-llm-text-generation-7b0972a9bb2a" class="external-link uri">https://medium.com/@sukhitashvili.soso/choosing-temperature-topk-and-topp-for-llm-text-generation-7b0972a9bb2a</a></li>
 </ul></div>
 <div class="section level1">
-<h1 id="session-2">session 2<a class="anchor" aria-label="anchor" href="#session-2"></a></h1>
+<h1 id="session-2---context-and-ide-internal-autocompletion">session 2 - “context and IDE-internal autocompletion”<a class="anchor" aria-label="anchor" href="#session-2---context-and-ide-internal-autocompletion"></a></h1>
 <ul><li>model != “service/platform”
 <ul><li>idR 2-3 Modellebenen, unterscheiden sich in
 <ul><li>input/context größe</li>
@@ -477,14 +477,80 @@ online! privacy issues relevant for a lot of things!
 possible</li>
 </ul></li>
 </ul></li>
+<li><a href="https://code.visualstudio.com/docs/editing/ai-powered-suggestions" class="external-link uri">https://code.visualstudio.com/docs/editing/ai-powered-suggestions</a></li>
 </ul></div>
 <div class="section level1">
-<h1 id="self-study">3 - self-study<a class="anchor" aria-label="anchor" href="#self-study"></a></h1>
-<ul><li><a href="https://code.visualstudio.com/docs/editing/ai-powered-suggestions" class="external-link uri">https://code.visualstudio.com/docs/editing/ai-powered-suggestions</a></li>
-</ul><!--
+<h1 id="pre-self-study">3 - pre self-study<a class="anchor" aria-label="anchor" href="#pre-self-study"></a></h1>
+</div>
+<div class="section level1">
+<h1 id="session-3---ide-internal-agent-mode">session 3 - “IDE-internal agent mode”<a class="anchor" aria-label="anchor" href="#session-3---ide-internal-agent-mode"></a></h1>
+<ul><li>so far chat or auto-completion: today “IDE-internal agent mode”
+<ul><li>chat interfaces of VSC</li>
+<li><a href="https://code.visualstudio.com/docs/chat/chat-overview" class="external-link uri">https://code.visualstudio.com/docs/chat/chat-overview</a></li>
+</ul></li>
+<li>differences to normal chat or autocompletion:
+<ul><li>access to all files</li>
+<li>larger context (autocompletion uses only current file; chat only
+what’s given)</li>
+<li>able to change multiple files in one prompt/task</li>
+<li>integration into VSC allows to automate also IDE-related tasks</li>
+</ul></li>
+</ul><div class="section level3">
+<h3 id="chat-modes">chat modes:<a class="anchor" aria-label="anchor" href="#chat-modes"></a></h3>
+<ul><li>inline chat:
+<ul><li>similar to autocompletion but guided and larger changes
+possible</li>
+<li>changes only in current file</li>
+<li>context = current file</li>
+<li>show prompt to extend/rewrite column list in README.md</li>
+</ul></li>
+<li>INSPECT CHANGES
+<ul><li>the diff dialog “Keep”/“Undo”</li>
+<li>extend prompt to update current changes</li>
+</ul></li>
+</ul><blockquote>
+<p>Task A - <a href="session-3.handson.html">session-3.handson.md</a></p>
+</blockquote>
+<ul><li>chat view
+<ul><li>context of a prompt can be set/extended
+<ul><li>default = current file or selection</li>
+<li>additional files can be added</li>
+<li>context definition via <code>@codebase</code>,
+<code>@readFile</code>, ..</li>
+<li>chat commands
+<ul><li>
+<code>/explain</code>, <code>/fix</code>, …</li>
+<li>
+<code>/compact</code> - the context problem “solution”</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul><blockquote>
+<p>Task B - <a href="session-3.handson.html">session-3.handson.md</a></p>
+</blockquote>
+<ul><li>next level for our “project”:
+<ul><li>we want to create a nice website that shows our table data</li>
+<li>to this end do a step-by-step approach (don’t use all tasks in one
+prompt!)</li>
+</ul></li>
+</ul><blockquote>
+<p>Task C - <a href="session-3.handson.html">session-3.handson.md</a></p>
+</blockquote>
+<ul><li>? what did you observe? how well did the AI understand your data and
+documentation needs?</li>
+<li>? how do you like the different chat modes? when would you use which
+one?</li>
+<li>? what are advantages/disadvantages of the different modes?</li>
+</ul><blockquote>
+<p>Upload/submit your created <code>index.html</code> file along with
+its CSS file!</p>
+</blockquote>
+<!--
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
- --></div>
+ -->
+</div>
+</div>
 
 
 
@@ -543,8 +609,8 @@ any links that you are not going to use.
   "url": "https://Dr-Eberle-Zentrum.github.io/AI-supported-coding-with-GitHub-Copilot/instructor/session-plan.html",
   "identifier": "https://Dr-Eberle-Zentrum.github.io/AI-supported-coding-with-GitHub-Copilot/instructor/session-plan.html",
   "dateCreated": "2025-12-10",
-  "dateModified": "2026-06-12",
-  "datePublished": "2026-06-16"
+  "dateModified": "2026-06-19",
+  "datePublished": "2026-06-19"
 }
 
   </script><script>
