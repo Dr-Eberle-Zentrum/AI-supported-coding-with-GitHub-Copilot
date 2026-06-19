@@ -50,7 +50,7 @@
   - codeword test
 - https://medium.com/@sukhitashvili.soso/choosing-temperature-topk-and-topp-for-llm-text-generation-7b0972a9bb2a
 
-# session 2
+# session 2 - "context and IDE-internal autocompletion"
 
 - model != "service/platform"
   - idR 2-3 Modellebenen, unterscheiden sich in 
@@ -93,7 +93,64 @@
   - separating sensitive data/code from ai-supported projects
     - YOU have to take care when AI is enabled or data leaks are possible
 
-
-# 3 - self-study
-
 - https://code.visualstudio.com/docs/editing/ai-powered-suggestions
+
+# 3 - pre self-study
+
+
+# session 3 - "IDE-internal agent mode"
+
+- so far chat or auto-completion: today "IDE-internal agent mode"
+  - chat interfaces of VSC
+  - https://code.visualstudio.com/docs/chat/chat-overview
+
+- differences to normal chat or autocompletion:
+  - access to all files
+  - larger context (autocompletion uses only current file; chat only what's given)
+  - able to change multiple files in one prompt/task
+  - integration into VSC allows to automate also IDE-related tasks
+
+### chat modes:
+
+- inline chat:
+  - similar to autocompletion but guided and larger changes possible
+  - changes only in current file
+  - context = current file
+  * show prompt to extend/rewrite column list in README.md
+  
+- INSPECT CHANGES
+  - the diff dialog "Keep"/"Undo" 
+  - extend prompt to update current changes
+
+> Task: 
+> - rewrite CSV header in German or English
+> - use a second prompt to request a specific column name for one column
+
+- chat view
+  - context of a prompt can be set/extended
+    - default = current file or selection
+    - additional files can be added
+    - context definition via `@codebase`, `@readFile`, ..
+    - chat commands
+      - `/explain`, `/fix`, ...
+      - `/compact` - the context problem "solution"
+
+> Task: 
+> - update header documentation in README.md w.r.t. updated CSV file
+> - request the creation of a new column that classifies all transactions into 5 reasonable classes + "other" along with an update of the README.md
+
+
+- next level for our "project":
+  - we want to create a nice website that shows our table data
+  - to this end do a step-by-step approach (don't use all tasks in one prompt!)
+  
+> Tasks:
+> - (1) request a new file "index.html" that nicely shows the table data from the CSV file
+> - (2) inspect the file 
+>    - use either web browser or VSC-internal browser to see the result
+>    - browse the HTML code (file content), highlighted unknown constructs and get explanations with `/explain` via chat view
+> - (3) think about styling changes you want to have and request them
+>    - if you are familiar with HTML use the inline chat, otherwise the chat view
+> - (4) request within the chat to revise your index.html and to store styling information separately
+>    - check whether the new separated file architecture renders index.html the same in the browser
+

@@ -1,3 +1,6 @@
+
+# 📖 Hands-on Exercise for Session 2: Getting Started with GitHub Copilot in VS Code
+
 Guten Tag, everyone! Welcome to today's hands-on session.
 
 Up until now, you've probably used AI like ChatGPT by typing a prompt, hitting enter, and waiting for a large block of text to come back. Today, we are going to experience a completely different flavor of AI assistance: **inline autocompletion** right inside your code editor, Visual Studio Code (VS Code), using GitHub Copilot.

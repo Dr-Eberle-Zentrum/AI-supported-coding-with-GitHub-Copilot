@@ -1,5 +1,5 @@
 
-# Hands-on exercise for session 1
+# 📖 Hands-on Exercise for Session 1: Getting Started with AI-supported Coding
 
 Within the following exercises, you are supposed to create and collect some information.
 
