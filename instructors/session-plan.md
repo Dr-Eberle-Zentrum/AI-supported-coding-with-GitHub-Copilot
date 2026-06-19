@@ -125,10 +125,11 @@
 > Task A - [session-3.handson.md](session-3.handson.md)
 
 - chat view
-  - context of a prompt can be set/extended
+  - context of a prompt can be set (open/selected) and extended (context menu "Add File to Chat")
     - default = current file or selection
     - additional files can be added
-    - context definition via `@codebase`, `@readFile`, ..
+    - context definition via `#...`, e.g. `#codebase`, `#readFile`, ..
+    - chat partners via `@...`, e.g. `@vscode`, `@codebase`, ...
     - chat commands
       - `/explain`, `/fix`, ...
       - `/compact` - the context problem "solution"
@@ -146,4 +147,47 @@
 - ? what are advantages/disadvantages of the different modes?
 
 > Upload/submit your created `index.html` file along with its CSS file!
+
+
+# self-study material for session 4
+
+- [../episodes/ai-risks-responsibilities.md](Risks, Drawbacks and Responsibilities with AI Usage)
+
+
+#  session 4
+
+- how to stay in control?
+  - have a plan and break it down into small steps
+
+- small, iterative steps
+  - allows to check results (get explanations) and adjust prompt
+  - allows to stay in control and avoid unwanted changes
+
+- ? how to get a good plan?
+  - use an AI chat to get an idea how to do the next step
+  - OR use the "Plan"-Agent of VSC to get a step-by-step plan for your task
+    - https://code.visualstudio.com/docs/agents/agent-types/local-agents
+    - switch to "Plan"-Agent and ask for a plan to create a nice website for our data
+
+> TASK: 
+> - open Chat view and switch to "Plan"-Agent
+> - ask for a plan to rewrite your website into an interactive one using JavaScript
+> - check the created plan and adjust it to your needs
+> - execute the first step of the plan and check results
+> - continue with the next steps of the plan
+
+- something went wrong?! the timeline feature of files in VSC
+  - "timeline" view of file changes
+  - "compare with previous version"
+  - "revert changes"
+
+> TASK:
+> - find Timeline of your `index.html` file
+> - how many versions do you have? can you find the version before the AI changes?
+> - compare with previous version
+
+- next level: git-based version control (commit, push, pull, revert, branches, ...)
+  - concept of branches and pull requests allows to separate "AI experiments" from main codebase and only merge when satisfied with results
+  - next-next level: online git repositories (github, gitlab, bitbucket, ...)
+    - bonus: GitHub Copilot operates also in GitHub's web-based code editor and pull request interface, allowing to use AI support also in online code reviews and pull request management
 
