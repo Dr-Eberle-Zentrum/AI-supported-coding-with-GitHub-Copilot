@@ -1,5 +1,5 @@
 
-# 📖 Hands-on Exercise for Session 2: From Typing to Talking – Copilot Chat in VS Code
+# 📖 Hands-on Exercise for Session 3: From Typing to Talking
 
 ## 1. Recap: What did we learn?
 
@@ -69,7 +69,7 @@ Let's now use the **Chat View** for bigger questions that require longer convers
 
 ---
 
-## 🎯 Project Work: Creating an Interactive HTML Dashboard
+## 🎯 Project Work: Creating an HTML Dashboard
 
 Now for the fun part! Let's bring your data to life with a visual representation.
 
