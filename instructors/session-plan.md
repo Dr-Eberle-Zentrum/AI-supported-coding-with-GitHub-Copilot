@@ -122,9 +122,7 @@
   - the diff dialog "Keep"/"Undo" 
   - extend prompt to update current changes
 
-> Task: 
-> - rewrite CSV header in German or English
-> - use a second prompt to request a specific column name for one column
+> Task A - [session-3.handson.md](session-3.handson.md)
 
 - chat view
   - context of a prompt can be set/extended
@@ -135,22 +133,17 @@
       - `/explain`, `/fix`, ...
       - `/compact` - the context problem "solution"
 
-> Task: 
-> - update header documentation in README.md w.r.t. updated CSV file
-> - request the creation of a new column that classifies all transactions into 5 reasonable classes + "other" along with an update of the README.md
-
+> Task B - [session-3.handson.md](session-3.handson.md)
 
 - next level for our "project":
   - we want to create a nice website that shows our table data
   - to this end do a step-by-step approach (don't use all tasks in one prompt!)
   
-> Tasks:
-> - (1) request a new file "index.html" that nicely shows the table data from the CSV file
-> - (2) inspect the file 
->    - use either web browser or VSC-internal browser to see the result
->    - browse the HTML code (file content), highlighted unknown constructs and get explanations with `/explain` via chat view
-> - (3) think about styling changes you want to have and request them
->    - if you are familiar with HTML use the inline chat, otherwise the chat view
-> - (4) request within the chat to revise your index.html and to store styling information separately
->    - check whether the new separated file architecture renders index.html the same in the browser
+> Task C - [session-3.handson.md](session-3.handson.md)
+
+- ? what did you observe? how well did the AI understand your data and documentation needs?
+- ? how do you like the different chat modes? when would you use which one?
+- ? what are advantages/disadvantages of the different modes?
+
+> Upload/submit your created `index.html` file along with its CSS file!
 

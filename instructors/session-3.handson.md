@@ -38,12 +38,12 @@ Open your VS Code project from the last session (containing your bank CSV and th
 5. Accept the changes if you are happy, otherwise keep on prompting.
 
 
-### Task B: Refining Your CSV with Inline Chat
+### Task B: Refining Your README.md with Inline Chat
 
-Now, let's continue working on your CSV file to make it even better.
+Now, let's continue working on your README.md file.
 
-* Use the **Inline Chat** (`Ctrl` + `I`) directly in your CSV file.
-* Make a second request to refine a specific column name—ask the AI to make it more descriptive or change it to a different language.
+* Go to the end of your README.md file and open the **Inline Chat** again (or `Ctrl` + `I` | `Cmd` + `I`) .
+* Request that the AI adds information about the author and some licence information to the end of the README.md file.
 
 > 💡 **Pro Tip:** You can keep refining until you're happy with the result. Each new prompt builds on the previous context!
 
@@ -51,7 +51,7 @@ Now, let's continue working on your CSV file to make it even better.
 
 ### Task C: Update Documentation via Chat View
 
-Let's now use the **Chat View** for bigger questions that require longer conversations.
+Let's now use the **Chat View** for bigger questions that require longer conversations and multiple files as a context.
 
 #### Step 1: Update Your README.md
 
@@ -63,8 +63,9 @@ Let's now use the **Chat View** for bigger questions that require longer convers
 
 #### Step 2: Add a New Classification Column
 
-* Still in the **Chat View**, make another request: ask the AI to create a new column that classifies all transactions into **5 reasonable classes** (for example: "Groceries", "Transport", "Entertainment", "Utilities", "Other").
+* Still in the **Chat View**, make another request: ask the AI to create a new column that classifies all transactions into **5 reasonable classes** (for example: "Geldeingang", "Essen, Trinken, Miete", "Unterhaltung", "Freizeit", "Anderes").
 * Request that the AI also update your `README.md` file to document this new column.
+* Check the changes in both files and see how well the AI understands your data and documentation needs.
 
 ---
 
