@@ -169,25 +169,59 @@
     - https://code.visualstudio.com/docs/agents/agent-types/local-agents
     - switch to "Plan"-Agent and ask for a plan to create a nice website for our data
 
-> TASK: 
-> - open Chat view and switch to "Plan"-Agent
-> - ask for a plan to rewrite your website into an interactive one using JavaScript
-> - check the created plan and adjust it to your needs
-> - execute the first step of the plan and check results
-> - continue with the next steps of the plan
+> Task A - [session-4.handson.md](session-4.handson.md)
+
+
+- how to provide bug information from the browser to the AI?
+  - open the browser's developer tools (F12)
+    - "Console" tab shows errors and warnings
+  - copy the error message and provide it to the AI in a new prompt
+
+
+> Task B - [session-4.handson.md](session-4.handson.md)
+
 
 - something went wrong?! the timeline feature of files in VSC
   - "timeline" view of file changes
   - "compare with previous version"
   - "revert changes"
 
-> TASK:
-> - find Timeline of your `index.html` file
-> - how many versions do you have? can you find the version before the AI changes?
-> - compare with previous version
+> Task C - [session-4.handson.md](session-4.handson.md)
 
 - next level: git-based version control (commit, push, pull, revert, branches, ...)
   - concept of branches and pull requests allows to separate "AI experiments" from main codebase and only merge when satisfied with results
   - next-next level: online git repositories (github, gitlab, bitbucket, ...)
     - bonus: GitHub Copilot operates also in GitHub's web-based code editor and pull request interface, allowing to use AI support also in online code reviews and pull request management
 
+
+
+# self-study material for session 5
+
+- https://www.uni-koblenz.de/de/bildungswissenschaften/oer/oer-und-ki/ki-und-urheberrecht
+- https://www.uni-koblenz.de/de/bildungswissenschaften/oer/oer-und-ki/oer-erstellen-mit-ki (beispielhafte Anwendung und Verdeutlichung der Urheberrechtsproblematik)
+
+
+# session 5 - AI-supported work and copyright issues
+
+
+
+# Kurzzusammenfassung: Urheberrecht & KI im Programmierkontext
+
+## ⚖️ Die Rechtliche Lage (Stand 2026)
+
+* **Das Schöpferprinzip (§ 2 Abs. 2 UrhG):** Nur Menschen können Urheber sein. Rein maschinell per Prompt erzeugter Code, Text oder Bildinhalt ist **urheberrechtlich schutzlos** (gemeinfrei) und darf von jedem kopiert werden.
+* **Der menschliche Beitrag entscheidet:** Ein bloßer Befehl („Schreibe mir JavaScript für...“) reicht nicht für einen Schutz aus. Erst wenn Studierende den KI-Code aktiv anpassen, mit eigenen Ideen kombinieren und strukturieren, kann ein geschütztes Gesamtwerk entstehen.
+* **Nutzungsrechte vs. Urheberrecht:** Die AGB der Anbieter (OpenAI, Microsoft) erlauben zwar die freie Nutzung der Ergebnisse, können den Nutzer:innen aber kein gesetzliches Urheberrecht garantieren, wo laut Gesetz keines existiert.
+* **EU AI Act (In Kraft ab August 2026):** Es gilt eine gesetzliche Kennzeichnungspflicht für KI-generierte Inhalte (insb. Texte/Bilder) bei Veröffentlichungen. Reiner Programmcode ist davon meist ausgenommen, die sichtbaren Inhalte einer Website jedoch nicht.
+* **Das Lizenz- & Haftungsrisiko:** KIs wurden mit geschütztem Open-Source-Code trainiert und können diesen in seltenen Fällen eins zu eins reproduzieren (*Regurgitation*). Das rechtliche Risiko bei Urheberrechtsverletzungen tragen die Anwender:innen, nicht die KI-Anbieter.
+
+---
+
+## 💬 Leitfragen für die vorgeschlagene Kursdiskussion
+
+* **Frage 1 (Kopierschutz):** > *„Ihr habt gerade eine interaktive Website gebaut, ohne eine Zeile JavaScript selbst schreiben zu können. Wenn ein anderes Team eure Website eins zu eins kopiert – könnt ihr euch rechtlich dagegen wehren?“*
+* **Kernantwort:** Nein, für den reinen KI-Code nicht. Ein rechtlicher Schutz greift nur für eure eigenen, selbst erhobenen Daten oder für Code-Teile, die ihr massiv selbst modifiziert habt.
+
+
+* **Frage 2 (Haftung im Ernstfall):** > *„Wer haftet, wenn das JavaScript der KI eine Funktion nutzt, die jemand anderes urheberrechtlich geschützt hat (z. B. aus einem kommerziellen Projekt kopiert wurde)?“*
+* **Kernantwort:** Ihr als Anwender:innen tragt das Risiko. Microsoft oder OpenAI haften in ihren kostenlosen Plänen nicht dafür. Ihr seid als „Human-in-the-Loop“ die finale Kontrollinstanz.
