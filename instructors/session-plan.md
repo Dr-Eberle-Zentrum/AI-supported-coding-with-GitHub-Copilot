@@ -169,7 +169,8 @@
     - https://code.visualstudio.com/docs/agents/agent-types/local-agents
     - switch to "Plan"-Agent and ask for a plan to create a nice website for our data
 
-> Task A - [session-4.handson.md](session-4.handson.md)
+> Task A - [session-4.handson.md](session-4.handson.md) - make a plan
+> Task B - [session-4.handson.md](session-4.handson.md) - do 1st step and check
 
 
 - how to provide bug information from the browser to the AI?
@@ -178,7 +179,7 @@
   - copy the error message and provide it to the AI in a new prompt
 
 
-> Task B - [session-4.handson.md](session-4.handson.md)
+> Task C - [session-4.handson.md](session-4.handson.md) - browser errors as feedback for AI
 
 
 - something went wrong?! the timeline feature of files in VSC
@@ -186,7 +187,7 @@
   - "compare with previous version"
   - "revert changes"
 
-> Task C - [session-4.handson.md](session-4.handson.md)
+> Task D - [session-4.handson.md](session-4.handson.md)
 
 - next level: git-based version control (commit, push, pull, revert, branches, ...)
   - concept of branches and pull requests allows to separate "AI experiments" from main codebase and only merge when satisfied with results

@@ -81,6 +81,9 @@ If AI changes go in the wrong direction, use VS Code's history features:
 
 ## 4. Optional Next Level: Git-Based Safety
 
+- [Self-study: Introduction to git and GitHub using GitHub Desktop](https://dr-eberle-zentrum.github.io/intro-to-git-and-github/instructor/01-git-basics.html) (Material of the respective micro course)
+- [Quickstart: use source control in VS Code](https://code.visualstudio.com/docs/sourcecontrol/quickstart)
+
 If time allows, we will discuss or try a git-based workflow:
 
 - Keep AI experiments in separate branches.
