@@ -18,8 +18,6 @@ Before you start, keep these principles in mind:
 - Check each result immediately.
 - Ask for explanations when something is unclear.
 - Use browser errors as feedback tools.
-- Use VS Code's **Timeline** feature to recover from unwanted changes.
-- Git-based workflows are next level safety.
 
 ---
 
@@ -65,35 +63,23 @@ Your goal is to turn your static website into an interactive one using JavaScrip
 
 ---
 
-### Task D: Recover with VS Code Timeline
+## 4. Short Presentation to the Group
 
-If AI changes go in the wrong direction, use VS Code's history features:
+When your website has become interactive and is working reasonably well, present it briefly to the group.
 
-1. Open the **Timeline** view for your `index.html` file.
-2. Count how many versions are available.
-3. Find a version from before a major AI change.
-4. Compare with the previous version.
-5. Decide whether to keep, partially reuse, or revert changes.
+In your short presentation, show:
 
-> 💡 This gives you a safety net for experimentation.
-
----
-
-## 4. Optional Next Level: Git-Based Safety
-
-- [Self-study: Introduction to git and GitHub using GitHub Desktop](https://dr-eberle-zentrum.github.io/intro-to-git-and-github/instructor/01-git-basics.html) (Material of the respective micro course)
-- [Quickstart: use source control in VS Code](https://code.visualstudio.com/docs/sourcecontrol/quickstart)
-
-If time allows, we will discuss or try a git-based workflow:
-
-- Keep AI experiments in separate branches.
-- Merge only reviewed and understood changes.
-- Use pull requests for transparent comparisons.
+- what interaction you added,
+- one step from your plan that worked well,
+- one issue or bug you had to fix,
+- and one thing you would improve next.
 
 ---
 
 ## 🎯 Food for Thought
 
-- Which strategy helped you stay most in control: planning, console-based debugging, or timeline comparison?
-- At what point does AI support save time, and at what point is it faster to code manually?
-- How can you ensure that final code is still truly **your** code?
+- Which strategy helped you stay most in control: planning, test and error forwarding, or small-step implementation?
+- At what point does AI support save time, and at what point is it faster to do things manually?
+- How can you ensure that final outcome is still truly **your** code/text/...?
+
+**Given these questions, write a short reflection and submit it.**
