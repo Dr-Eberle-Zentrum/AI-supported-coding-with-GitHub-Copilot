@@ -243,6 +243,9 @@
 > Task C - [session-5.handson.md](session-5.handson.md) - git-based safety and review
 
 
+> Task D - [session-5.handson.md](session-5.handson.md) - github pages setup
+
+
 - course wrap-up
   - ? which part felt most challenging? interesting? useful? (technical vs. legal)
   - ? overall feedback? was it worth the time and effort? what would you change for next time?
