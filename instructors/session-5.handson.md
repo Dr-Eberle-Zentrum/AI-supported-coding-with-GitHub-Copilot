@@ -90,6 +90,31 @@ Now move from file-level recovery to project-level safety.
 
 ---
 
+### Task D: Publish with GitHub Pages
+
+Now we want to publish our created website that is located within our GitHub repository.
+To this end, we want to use the GitHub Pages feature.
+
+Typically, the `index.html` file is located in the root of your repository. 
+If you have created a subfolder for your website, make sure to name the respective folder in the GitHub Pages settings done in the following.
+
+1. Open your GitHub repository in a web browser.
+2. Click on the **Settings** tab
+3. Scroll down to the **Pages** section in the left sidebar.
+4. Select the branch you want to publish (usually `main`) and click **Save**.
+5. Wait a few minutes and then check the provided URL to see your published website.
+6. Update your README.md file to include the URL of your published website.
+7. Also enable the GitHub Pages URL in the "About" section of your repository.
+
+The publishing process uses an engine call Jekyll to revise your HTML files. 
+In our case, the website is static and does not require any further processing.
+Thus, to speedup publishing, we can disable the Jekyll engine by creating a file named `.nojekyll` in the root of our repository.
+
+8. Create a new file in the root of your repository and name it `.nojekyll`.
+
+
+---
+
 ## 🎯 Food for Thought
 
 - Which part felt more challenging today: legal reflection or technical recovery?
