@@ -75,6 +75,58 @@ library(ellmer)
 library(tidyverse)  # For data manipulation
 ```
 
+
+## Setting Up ellmer with Ollama
+
+To use `ellmer` with Ollama, i.e. a local LLM on your machine, you need to install Ollama and set up a local model.
+
+### Step 1: Install and start Ollama
+
+Go to [https://ollama.com/](https://ollama.com/) and follow the installation instructions for your operating system.
+
+**Important:** *Start the Ollama program/server on your machine before proceeding to the next step.*
+
+### Step 2: Download a Local Model
+
+Typically, you will want to choose a model that fits your computational resources and needs.
+For this, you have to know that larger models require more RAM  and processing power, while smaller models are faster but may have lower accuracy.
+Furthermore, higher computation speed can only be achieved using a GPU (from your graphics card with a large VRAM of its own), while CPU-only machines will be slower.
+Thus, most models are not suitable for CPU-only machines, and you should check the model requirements before downloading.
+
+You can browse the list of available models on the [Ollama website](https://ollama.com/models) and choose one that fits your needs.
+
+Here, we suggest the [`phi4-mini:3.8b` model](https://ollama.com/library/phi4-mini) (~2.5GB space on your harddrive), which comprises about 3.8 billion parameters and is suitable for CPU-only machines with at least 16GB RAM.
+
+To download a model, either use the 
+
+- Ollama chat GUI (Graphical User Interface), i.e. model selection in the chat, or 
+- the command line interface (CLI).
+
+### Step 3: Initialize a Chat Object
+
+Given Ollama is running and you have downloaded a model, you can now initialize a chat object in R:
+
+```r
+chat <- chat_ollama(model = "phi4-mini:3.8b")  # replace with your chosen model
+```
+
+To make an LLM more deterministic in its responses and thus usable in a scientific context, you can set respective parameters.
+
+- `temperature` : defines the "randomness" of the answers, where "0" is more deterministic and "2" is more random. For reproducible results, set it to 0.
+- `top_k` : defines the number of most likely next words to consider for the next word prediction. For reproducible results, set it to 1.
+
+```r
+chat <- 
+  chat_ollama(
+    model = "phi4-mini:3.8b",  # replace with your chosen model
+    temperature = 0,
+    top_k = 1
+  )
+```
+
+
+
+
 ## Setting Up ellmer with GitHub Copilot
 
 To use `ellmer` with GitHub Copilot (via GitHub Models), you need to set up authentication.
@@ -169,7 +221,9 @@ chat <- chat_github()
 # iterative call of chat interface using sapply() or purrr::map()
 results <- purrr::map_chr(texts, 
   function(text) {
-    chat$chat(paste("Classify the sentiment (positive/negative/neutral):", text))
+    chat$chat(
+      paste("Classify the sentiment (positive/negative/neutral):", text)
+    )
   })
 ```
 
@@ -178,15 +232,16 @@ results <- purrr::map_chr(texts,
 Integrate AI into tidyverse pipelines:
 
 ```r
+
 # Example: Customer feedback analysis
 feedback_data <- tibble(
   id = 1:5,
   comment = c(
-    "Great service, very helpful!",
-    "Long wait times, not happy.",
-    "Average experience.",
-    "Excellent quality and fast delivery!",
-    "Product arrived damaged."
+    "I had a wonderful experience with the customer support team. The service was absolutely great, and the representative went above and beyond to be helpful and answer all my questions quickly.",
+    "I was really disappointed by the long wait times I experienced today. I had to sit on hold for over forty minutes just to speak with someone, which left me very unhappy.",
+    "My visit was just an average experience overall. The product works fine and the staff was polite enough, but nothing really stood out to make it a memorable or exceptional interaction.",
+    "I am incredibly impressed with this purchase! The item is of excellent quality, and the fast delivery exceeded my expectations, arriving a full two days earlier than the estimated date.",
+    "I was so excited for this item to get here, but unfortunately, the product arrived damaged due to poor packaging. I will need to contact customer support immediately for a replacement."
   )
 )
 
@@ -196,9 +251,11 @@ feedback_processed <- feedback_data %>%
   mutate(
     sentiment = chat$chat(
       paste("Classify as positive/negative/neutral:", comment)
+      , echo="none" # supress printing of the result in the console
     ),
     key_themes = chat$chat(
       paste("Extract main themes (max 3 words):", comment)
+      , echo="none" # supress printing of the result in the console
     )
   )
 ```
