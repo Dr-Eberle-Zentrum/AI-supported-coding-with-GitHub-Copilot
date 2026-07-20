@@ -120,7 +120,8 @@ chat <-
   chat_ollama(
     model = "phi4-mini:3.8b",  # replace with your chosen model
     temperature = 0,
-    top_k = 1
+    top_k = 1,
+    seed = 42  # optional: set a seed for reproducibility of random number generation
   )
 ```
 
