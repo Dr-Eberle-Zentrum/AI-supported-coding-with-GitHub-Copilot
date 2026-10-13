@@ -25,9 +25,13 @@ Thus, we have to agree on a common prompt.
 
 - ? Formulate TOGETHER a prompt (without testing/using it) to get an idea what the script does!
   - you are so far interested in the purpose and general function of the script...
-  - *KEEP*: add your prompt to your log file
+  - you can develop together online and share with https://codeshare.io
+    - [group 1](https://codeshare.io/AI-vibe-coding-group-1)
+    - [group 2](https://codeshare.io/AI-vibe-coding-group-2)
+    - [group 3](https://codeshare.io/AI-vibe-coding-group-3)
+  - *KEEP*: copy and add the prompt to your personal log file
 - ? What are important elements of the prompt?
-  >> check the RECCE Prompt Checklist (via AI)
+  - >> check the RICCE Prompt Checklist (via AI)
 - ? Revise the created prompt into a final common prompt all agree upon!
   - *KEEP*: add the final common prompt to your log file
   
